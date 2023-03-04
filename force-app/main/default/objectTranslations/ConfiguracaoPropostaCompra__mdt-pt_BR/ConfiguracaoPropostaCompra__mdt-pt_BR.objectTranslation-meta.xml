@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Configuração proposta de compra</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Configurações propostas de compras</value>
+    </caseValues>
+    <gender>Feminine</gender>
+    <layouts>
+        <layout>Configuração proposta de compra Layout</layout>
+        <sections>
+            <label></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+</CustomObjectTranslation>

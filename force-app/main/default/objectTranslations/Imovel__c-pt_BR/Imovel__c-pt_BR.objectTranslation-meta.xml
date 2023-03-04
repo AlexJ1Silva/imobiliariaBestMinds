@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Imóvel</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Imóveis</value>
+    </caseValues>
+    <gender>Feminine</gender>
+    <layouts>
+        <layout>Apartamento</layout>
+        <sections>
+            <label></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Informações Apartamento</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Casa</layout>
+        <sections>
+            <label></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Informações Casa</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label></label>
+        <name>Apartamento</name>
+    </recordTypes>
+    <recordTypes>
+        <label></label>
+        <name>Casa</name>
+    </recordTypes>
+</CustomObjectTranslation>

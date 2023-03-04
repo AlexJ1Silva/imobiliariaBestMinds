@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <content>Home_Page_Default</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>standard-home</pageOrSobjectType>
+    </actionOverrides>
+    <brand>
+        <headerColor>#58B0FD</headerColor>
+        <logo>BEST_MINDS_AZUL8</logo>
+        <logoVersion>1</logoVersion>
+        <shouldOverrideOrgTheme>false</shouldOverrideOrgTheme>
+    </brand>
+    <description>A Best Minds é uma imobiliária fundada por grandes amigos com uma visão ambiciosa para o ramo imobiliário. Com 12 anos de experiência no mercado, a empresa é consolidada e respeitada.</description>
+    <formFactors>Small</formFactors>
+    <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
+    <label>Imobiliária Best Minds</label>
+    <navType>Standard</navType>
+    <tabs>standard-home</tabs>
+    <tabs>Imovel__c</tabs>
+    <tabs>Comissao__c</tabs>
+    <tabs>standard-Contact</tabs>
+    <tabs>PropostaCompra__c</tabs>
+    <uiType>Lightning</uiType>
+    <utilityBar>Imobili_ria_Best_Minds_UtilityBar</utilityBar>
+</CustomApplication>
