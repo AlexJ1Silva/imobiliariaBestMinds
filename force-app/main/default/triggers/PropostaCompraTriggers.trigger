@@ -10,4 +10,8 @@ trigger PropostaCompraTriggers on PropostaCompra__c (before insert, after update
         PropostaCompraBO.getInstance().criaComissaoPropostaStatusAgPagamento(Trigger.new);
 
     }
+   /*  else if(Trigger.isInsert && Trigger.isAfter){
+        PropostaCompraBO.getInstance().criaComissaoPropostaStatusAgPagamento(Trigger.new);
+
+    } */
 }

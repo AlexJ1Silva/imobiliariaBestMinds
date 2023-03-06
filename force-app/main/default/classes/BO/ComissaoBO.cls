@@ -14,6 +14,8 @@ public with sharing class ComissaoBO{
 
         set<id> propostaListid = new set<id>();
 
+        List<Comissao__c> listComissao = ComissaoDAO.getPropostaCompraIdList(propostaListid);
+
         for(PropostaCompra__c p : lstPropsta){
             if(p.Status__c == 'Finalizada'){
                 propostaListid.add(p.Id);
@@ -26,7 +28,6 @@ public with sharing class ComissaoBO{
 
         Database.update(attImoveisStatus);
 
-        List<Comissao__c> listComissao = ComissaoDAO.getPropostaCompraIdList(propostaListid);
 
         if(listComissao.size() >0){
             for(Comissao__c c : listComissao){
@@ -34,8 +35,29 @@ public with sharing class ComissaoBO{
             }
         }
 
-
         Database.update(listComissao);
     }
+
+    /* public void attStatusPropostaCompraFinalizado(List<Comissao__c> lstAttComissao){
+
+        set<id> propostaListid = new set<id>();
+
+        List<PropostaCompra__c> attPropostaList = new  List<PropostaCompra__c>();
+        
+        List<Comissao__c> listComissao = ComissaoDAO.getPropostaCompraIdList(propostaListid);
+
+        for(Comissao__c c : lstAttComissao){
+            if(c.Status__c == 'Paga'){
+                propostaListid.add(c.Id);
+                PropostaCompra__c p = new PropostaCompra__c();
+                p.id = c.PropostaCompra__c;
+                p.Status__c = 'Finalizada';
+                attPropostaList.add(p);
+
+            }
+        }
+
+        Database.update(attPropostaList);
+    } */
 
 }
