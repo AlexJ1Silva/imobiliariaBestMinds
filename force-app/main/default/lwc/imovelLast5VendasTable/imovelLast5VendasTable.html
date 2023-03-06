@@ -1,0 +1,54 @@
+<template>
+    <lightning-card><template if:true={showSpinner}>
+            <div class="exampleHolder">
+                <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+            </div>
+        </template>
+
+        <template if:true={naoTemDados}>
+            <span>Não foram encontrados Imóveis vendidos</span>
+        </template>
+
+        <template if:true={temDados}>
+
+            <table class="slds-t>able slds-table_cell-buffer slds-table_bordered"
+                aria-labelledby="element-with-table-label other-element-with-table-label">
+                <thead>
+                    <tr>
+                        <th>
+                            <div>Número Imóvel</div>
+                        </th>
+                        <th>
+                            <div>Tipo do Imóvel</div>
+                        </th>
+                        <th>
+                            <div>Nome do Cliente</div>
+                        </th>
+                        <th>
+                            <div>Valor da Venda</div>
+                        </th>
+                        <th>
+                            <div>Vendedor</div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <template if:true={showTable}>
+                        <template for:each={ultimas5VendasList} for:item="item">
+                            <tr key={item.id} class="slds-hint-parent">
+                                <td><a href={item.url}>{item.numeroImovel}</a></td>
+                                <td>{item.tipoImovel}</td>
+                                <td><a href={item.cliente}>{item.nomeCliente}</a></td>
+                                <td>{item.valorVenda}</td>
+                                <td>{item.Vendedor}</td>
+                            </tr>
+
+                        </template>
+                    </template>
+
+                </tbody>
+            </table>
+
+        </template>
+    </lightning-card>
+</template>
