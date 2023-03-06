@@ -14,7 +14,7 @@ public with sharing class ComissaoBO{
 
         set<id> propostaListid = new set<id>();
 
-        List<Comissao__c> listComissao = ComissaoDAO.getPropostaCompraIdList(propostaListid);
+       
 
         for(PropostaCompra__c p : lstPropsta){
             if(p.Status__c == 'Finalizada'){
@@ -26,6 +26,8 @@ public with sharing class ComissaoBO{
             }
         }
 
+        List<Comissao__c> listComissao = ComissaoDAO.getPropostaCompraIdList(propostaListid);
+        
         Database.update(attImoveisStatus);
 
 
