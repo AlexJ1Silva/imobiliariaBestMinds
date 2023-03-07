@@ -1,0 +1,13 @@
+.align{
+    text-align: center;
+  /*   background-color: rgba(137, 137, 137, 0.904); */
+    font-weight: bold;
+    font-size: 130%;
+    background-image: linear-gradient(rgb(9, 26, 62), rgb(49, 56, 70));
+    color: aliceblue;
+}
+
+.linha-vertical {
+    height: 23px;/*Altura da linha*/
+     border-left:  solid; /* Adiciona borda esquerda na div como ser fosse uma linha.*/
+  }
