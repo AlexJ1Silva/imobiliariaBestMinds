@@ -1,0 +1,104 @@
+<apex:page controller="ComprovanteComissaoController" applyBodyTag="false" renderAs="advanced_pdf" docType="html-5.0">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <style type="text/css">
+     @page {
+            size: A4;
+        }
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color:black!important;
+        }
+        table {
+            page-break-after:auto;
+        }
+        tr:nth-child(even) {
+            background-color: #F2F2F2;
+        }
+        #header {
+            width: 100% !important;height: 100px;
+        }
+       
+        .logo {
+            float:center;
+            text-align:center;
+        }
+        
+     
+        .title {
+            text-align:center; 
+            font-weight: bold; 
+            text-decoration: underline;
+            margin: 40px;
+            margin-bottom: 50px;
+        }
+        .corpo {
+
+            text-align:justify; 
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        .margin-bottom {
+            margin-bottom: 15px;
+        }
+          
+       
+    </style>
+</head>
+<body>
+    <!-- <apex:slds /> -->
+    <div class="logo">
+        <apex:image url="{!$Resource.LogoCirculo100}" rendered="true" width="200" height="200" />
+    </div>
+        
+        <hr/>
+       
+    <div class="title">COMPROVANTE DE PAGAMENTO DE COMISSÃO
+    </div>
+    
+    
+
+    <p><b>COMISSÃO Nº </b>{!pc.Comissoes__r[0].Name}</p>
+
+    <p><b>RECIBO DE:</b> IMOBILIÁRIA BEST MINDS</p>
+
+    <p><b>NOME:</b></p>
+    <hr/> 
+
+    <p>A importância de <b>R${!pc.Comissoes__r[0].Valor__c}</b> referente a <b>{!pc.Comissoes__r[0].Percentual__c}%</b> de comissão de venda do imóvel:</p>
+    
+    <p><b>Imóvel Cód:</b> {!pc.Imovel__r.Name}</p>
+
+    <p><b>Tipo:</b> {!pc.Imovel__r.RecordType.Name}</p>
+
+    <p><b>Metragem:</b> {!pc.Imovel__r.Metragem__c} m2</p>
+
+    <p><b>Valor Base:</b> {!pc.Imovel__r.ValorBase__c}</p>
+
+    <p><b>Proposta Nº:</b> {!pc.Name}</p>
+
+    <p><b>Forma de pagamento:</b> Transferência bancaria</p>
+
+
+    <p><b>{!cidade}, {!dia} de {!mes} de {!ano}</b></p>
+
+
+    <p>____________________________________</p>
+
+    <p><b>{!pc.Vendedor__r.Name}</b></p>
+
+
+    <p>____________________________________</p>
+
+    <p><b>Imobiliária Best Minds</b></p>
+
+    
+
+
+
+
+
+    
+
+</body>
+</apex:page>

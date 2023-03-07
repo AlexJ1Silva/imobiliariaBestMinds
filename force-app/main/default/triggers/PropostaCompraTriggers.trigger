@@ -1,4 +1,4 @@
-trigger PropostaCompraTriggers on PropostaCompra__c (before insert, after update, after insert) {
+trigger PropostaCompraTriggers on PropostaCompra__c (before insert, after update, after insert, before update) {
 
     
     if(Trigger.isUpdate && Trigger.isAfter){
@@ -10,8 +10,12 @@ trigger PropostaCompraTriggers on PropostaCompra__c (before insert, after update
         PropostaCompraBO.getInstance().criaComissaoPropostaStatusAgPagamento(Trigger.new);
 
     }
-   /*  else if(Trigger.isInsert && Trigger.isAfter){
-        PropostaCompraBO.getInstance().criaComissaoPropostaStatusAgPagamento(Trigger.new);
-
-    } */
+    if(Trigger.isUpdate && Trigger.isBefore){
+        PropostaCompraBO.getInstance().preencheDataEntregaChaves(Trigger.new);
+    }
+    if(Trigger.isInsert && Trigger.isBefore){
+        PropostaCompraBO.getInstance().preencheDataEntregaChaves(Trigger.new);
+    }
+        
+    
 }

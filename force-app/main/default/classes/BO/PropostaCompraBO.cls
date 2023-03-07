@@ -29,7 +29,7 @@ public with sharing class PropostaCompraBO{
             imovelMap.put(i.Id, i);
 
         }
-        
+
         for (Comissao__c c : ComissaoDAO.getPropostaCompraIdList(propostaListid)){
             mapComissao.put(c.PropostaCompra__C, c);
         }
@@ -64,4 +64,48 @@ public with sharing class PropostaCompraBO{
         Database.insert (criarComissao);
     }
 
+    public void preencheDataEntregaChaves(List<PropostaCompra__c> lstPropostas){
+        set<id> imovelId = new set<id>();
+        set<id> propostaListid = new set<id>();
+        Map<Id, Imovel__c> imovelMap = new Map<Id, Imovel__c>();
+        Map<String, ConfiguracaoPropostaCompra__mdt> mapCpcTipoImovel = new Map<String, ConfiguracaoPropostaCompra__mdt>();
+        for (ConfiguracaoPropostaCompra__mdt cpc : [SELECT id, Tipo__c, PercentualComissao__c, Label, DiasEntregaChavesMetadata__c
+                                                    FROM ConfiguracaoPropostaCompra__mdt]){
+            mapCpcTipoImovel.put(cpc.Label, cpc);
+        }
+
+        for (PropostaCompra__c p : lstPropostas){
+            imovelId.add(p.Imovel__c);
+            propostaListid.add(p.Id);
+        }
+
+        for (Imovel__c i : ImovelDAO.getPropostaCompraIdList(imovelId)){
+            imovelMap.put(i.Id, i);
+        }
+        for (PropostaCompra__c p : lstPropostas){
+
+            if (p.Status__c == 'Finalizada'){
+                String tipo = imovelMap.get(p.Imovel__c).RecordType.Name;
+                //System.debug('###>>>>> TIPO');
+                //System.debug(tipo);
+                Integer prazo = (Integer) mapCpcTipoImovel.get(tipo).DiasEntregaChavesMetadata__c;
+                //System.debug('####>>>>>>PRAZO');
+                //System.debug(prazo);
+                p.DataEntregaChaves__c = System.today() + prazo;
+            }
+        }
+    }
+
+    public void reprovaPropostaMaisDe40Dias(List<PropostaCompra__c> propostaList){
+
+        for(PropostaCompra__c p : propostaList){
+           
+                p.Status__c = 'Reprovada';
+          
+            
+        }
+        //System.debug('###>>>>>>LISTA');
+        //System.debug(propostaList);
+        Database.update(propostaList);
+    }
 }
