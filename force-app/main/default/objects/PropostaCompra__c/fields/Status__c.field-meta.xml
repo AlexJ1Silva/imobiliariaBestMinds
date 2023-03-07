@@ -22,9 +22,9 @@
                 <label>Em análise</label>
             </value>
             <value>
-                <fullName>Aguardando</fullName>
+                <fullName>Aguardando pagamento</fullName>
                 <default>false</default>
-                <label>Aguardando</label>
+                <label>Aguardando pagamento</label>
             </value>
             <value>
                 <fullName>Finalizada</fullName>

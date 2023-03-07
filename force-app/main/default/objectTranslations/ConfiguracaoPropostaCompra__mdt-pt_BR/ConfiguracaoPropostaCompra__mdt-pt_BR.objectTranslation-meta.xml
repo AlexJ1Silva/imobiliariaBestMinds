@@ -9,11 +9,4 @@
         <value>Configurações propostas de compras</value>
     </caseValues>
     <gender>Feminine</gender>
-    <layouts>
-        <layout>Configuração proposta de compra Layout</layout>
-        <sections>
-            <label></label>
-            <section>Custom Links</section>
-        </sections>
-    </layouts>
 </CustomObjectTranslation>

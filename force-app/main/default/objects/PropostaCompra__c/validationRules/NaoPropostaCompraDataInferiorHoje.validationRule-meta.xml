@@ -3,6 +3,6 @@
     <fullName>NaoPropostaCompraDataInferiorHoje</fullName>
     <active>true</active>
     <description>Uma proposta de compra não pode ser criada com a data menor de hoje.</description>
-    <errorConditionFormula>Data__c &lt; TODAY()</errorConditionFormula>
+    <errorConditionFormula>AND(ISNEW() ,Data__c &lt; TODAY())</errorConditionFormula>
     <errorMessage>A data não pode ser inferior a hoje.</errorMessage>
 </ValidationRule>

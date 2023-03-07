@@ -22,7 +22,7 @@
                 <field>Name</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Required</behavior>
                 <field>NomeEmpreendimento__c</field>
             </layoutItems>
             <layoutItems>
@@ -30,11 +30,11 @@
                 <field>Status__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Required</behavior>
                 <field>Metragem__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Required</behavior>
                 <field>ValorBase__c</field>
             </layoutItems>
         </layoutColumns>
@@ -43,11 +43,11 @@
                 <emptySpace>true</emptySpace>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Required</behavior>
                 <field>Unidade__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Required</behavior>
                 <field>Bloco__c</field>
             </layoutItems>
             <layoutItems>
@@ -55,7 +55,7 @@
                 <field>PossuiSacada__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Required</behavior>
                 <field>QuantidadeVagas__c</field>
             </layoutItems>
         </layoutColumns>

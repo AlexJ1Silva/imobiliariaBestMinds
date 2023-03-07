@@ -9,15 +9,4 @@
         <value>Propostas de compra</value>
     </caseValues>
     <gender>Feminine</gender>
-    <layouts>
-        <layout>Proposta de compra Layout</layout>
-        <sections>
-            <label></label>
-            <section>Custom Links</section>
-        </sections>
-    </layouts>
-    <validationRules>
-        <errorMessage></errorMessage>
-        <name>NaoPropostaCompraDataInferiorHoje</name>
-    </validationRules>
 </CustomObjectTranslation>

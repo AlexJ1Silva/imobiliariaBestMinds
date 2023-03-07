@@ -2,6 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Valor__c</fullName>
     <externalId>false</externalId>
+    <inlineHelpText>Valor da Proposta</inlineHelpText>
     <label>Valor</label>
     <precision>18</precision>
     <required>false</required>
